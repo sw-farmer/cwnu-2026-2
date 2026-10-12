@@ -1,0 +1,4648 @@
+{
+ "project": {
+  "공사명": "창원 ○○동 근린생활시설 신축공사(교육용 가상 현장)",
+  "착공일": "2026-04-01",
+  "계약준공일": "2027-10-15",
+  "진도기준일": "2026-09-30",
+  "마일스톤": [
+   {
+    "id": "M1",
+    "이름": "착공",
+    "작업코드": "1.1.1",
+    "기준": "시작",
+    "계약목표일": "2026-04-01"
+   },
+   {
+    "id": "M2",
+    "이름": "CIP·캡빔 완료",
+    "작업코드": "2.1.3",
+    "기준": "종료",
+    "계약목표일": "2026-07-01"
+   },
+   {
+    "id": "M3",
+    "이름": "터파기 완료",
+    "작업코드": "2.2.5",
+    "기준": "종료",
+    "계약목표일": "2026-09-29"
+   },
+   {
+    "id": "M4",
+    "이름": "기초 완료",
+    "작업코드": "3.2.3",
+    "기준": "종료",
+    "계약목표일": "2026-11-06"
+   },
+   {
+    "id": "M5",
+    "이름": "지하골조 완료",
+    "작업코드": "4.2.5",
+    "기준": "종료",
+    "계약목표일": "2027-01-05"
+   },
+   {
+    "id": "M6",
+    "이름": "골조 완료(상량)",
+    "작업코드": "4.8.5",
+    "기준": "종료",
+    "계약목표일": "2027-05-14"
+   },
+   {
+    "id": "M7",
+    "이름": "외부비계 해체",
+    "작업코드": "1.2.5",
+    "기준": "종료",
+    "계약목표일": "2027-07-12"
+   },
+   {
+    "id": "M8",
+    "이름": "사용승인",
+    "작업코드": "8.1.5",
+    "기준": "종료",
+    "계약목표일": "2027-09-22"
+   },
+   {
+    "id": "M9",
+    "이름": "준공",
+    "작업코드": "8.1.6",
+    "기준": "종료",
+    "계약목표일": "2027-10-15"
+   }
+  ]
+ },
+ "wbs": [
+  {
+   "code": "1",
+   "name": "공사준비·가설공사",
+   "level": 1,
+   "start": "2026-04-01",
+   "finish": "2027-07-12",
+   "children": [
+    {
+     "code": "1.1",
+     "name": "착공 준비(준비기간)",
+     "level": 2,
+     "start": "2026-04-01",
+     "finish": "2026-05-04",
+     "children": [
+      {
+       "code": "1.1.1",
+       "name": "착공신고·현황측량·인접건물 사전조사",
+       "level": 3,
+       "start": "2026-04-01",
+       "finish": "2026-04-14",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 10,
+       "calendar": "STD",
+       "late_start": "2026-04-03",
+       "late_finish": "2026-04-16",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": []
+      },
+      {
+       "code": "1.1.2",
+       "name": "가설울타리·출입구 설치",
+       "level": 3,
+       "start": "2026-04-15",
+       "finish": "2026-04-24",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 7,
+       "calendar": "WX",
+       "late_start": "2026-04-17",
+       "late_finish": "2026-04-28",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "1.1.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "1.1.3",
+       "name": "가설사무실·자재창고 설치",
+       "level": 3,
+       "start": "2026-04-15",
+       "finish": "2026-04-21",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2026-04-30",
+       "late_finish": "2026-05-08",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "1.1.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "1.1.4",
+       "name": "가설전기·용수 인입",
+       "level": 3,
+       "start": "2026-04-20",
+       "finish": "2026-05-04",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 10,
+       "calendar": "STD",
+       "late_start": "2026-04-23",
+       "late_finish": "2026-05-08",
+       "total_float": 3,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "1.1.2",
+         "관계": "SS",
+         "시차": 3
+        }
+       ]
+      },
+      {
+       "code": "1.1.5",
+       "name": "세륜시설·침사조 설치",
+       "level": 3,
+       "start": "2026-04-27",
+       "finish": "2026-05-04",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 4,
+       "calendar": "WX",
+       "late_start": "2026-04-30",
+       "late_finish": "2026-05-07",
+       "total_float": 2,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "1.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "1.2",
+     "name": "양중·비계",
+     "level": 2,
+     "start": "2026-11-10",
+     "finish": "2027-07-12",
+     "children": [
+      {
+       "code": "1.2.1",
+       "name": "타워크레인 기초·설치·사용 전 검사",
+       "level": 3,
+       "start": "2026-11-10",
+       "finish": "2026-11-17",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 6,
+       "calendar": "WX",
+       "late_start": "2026-12-29",
+       "late_finish": "2027-01-07",
+       "total_float": 32,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "3.2.3",
+         "관계": "FS",
+         "시차": 3
+        }
+       ]
+      },
+      {
+       "code": "1.2.2",
+       "name": "외부 시스템비계 설치(1~3층, 골조 진행에 맞춰 증설)",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-02-12",
+       "trade": "가설",
+       "floor": "외부",
+       "duration": 8,
+       "calendar": "WX",
+       "late_start": "2027-04-06",
+       "late_finish": "2027-04-15",
+       "total_float": 38,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.4.1",
+         "관계": "SS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "1.2.3",
+       "name": "외부 시스템비계 설치(4층~옥탑, 골조 진행에 맞춰 증설)",
+       "level": 3,
+       "start": "2027-04-06",
+       "finish": "2027-04-15",
+       "trade": "가설",
+       "floor": "외부",
+       "duration": 8,
+       "calendar": "WX",
+       "late_start": "2027-05-10",
+       "late_finish": "2027-05-21",
+       "total_float": 20,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "1.2.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.7.1",
+         "관계": "SS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "1.2.4",
+       "name": "타워크레인 해체",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-05-27",
+       "trade": "가설",
+       "floor": "대지",
+       "duration": 4,
+       "calendar": "WX",
+       "late_start": "2027-07-06",
+       "late_finish": "2027-07-12",
+       "total_float": 27,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 7
+        }
+       ]
+      },
+      {
+       "code": "1.2.5",
+       "name": "외부 시스템비계 해체",
+       "level": 3,
+       "start": "2027-06-29",
+       "finish": "2027-07-12",
+       "trade": "가설",
+       "floor": "외부",
+       "duration": 8,
+       "calendar": "WX",
+       "late_start": "2027-06-29",
+       "late_finish": "2027-07-12",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "6.1.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 160
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "2",
+   "name": "흙막이·토공사",
+   "level": 1,
+   "start": "2026-04-27",
+   "finish": "2026-09-29",
+   "children": [
+    {
+     "code": "2.1",
+     "name": "흙막이(CIP)",
+     "level": 2,
+     "start": "2026-04-27",
+     "finish": "2026-07-06",
+     "children": [
+      {
+       "code": "2.1.1",
+       "name": "지장물 조사·시험굴착",
+       "level": 3,
+       "start": "2026-04-27",
+       "finish": "2026-05-06",
+       "trade": "토공",
+       "floor": "대지",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2026-04-29",
+       "late_finish": "2026-05-08",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "1.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "2.1.2",
+       "name": "CIP 천공·철근망·콘크리트 타설",
+       "level": 3,
+       "start": "2026-05-07",
+       "finish": "2026-06-11",
+       "trade": "토공",
+       "floor": "대지",
+       "duration": 22,
+       "calendar": "WX",
+       "late_start": "2026-05-11",
+       "late_finish": "2026-06-12",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.1.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "1.1.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "1.1.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "1.1.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 4,
+        "cost_per_day_만원": 450
+       }
+      },
+      {
+       "code": "2.1.3",
+       "name": "CIP 두부정리·캡빔 시공",
+       "level": 3,
+       "start": "2026-06-15",
+       "finish": "2026-07-01",
+       "trade": "토공",
+       "floor": "대지",
+       "duration": 10,
+       "calendar": "WX",
+       "late_start": "2026-06-18",
+       "late_finish": "2026-07-06",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.1.2",
+         "관계": "FS",
+         "시차": 3
+        }
+       ]
+      },
+      {
+       "code": "2.1.4",
+       "name": "계측기 설치·초기값 측정(지중경사계·지하수위계)",
+       "level": 3,
+       "start": "2026-07-02",
+       "finish": "2026-07-06",
+       "trade": "토공",
+       "floor": "대지",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2026-07-09",
+       "late_finish": "2026-07-13",
+       "total_float": 5,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "2.1.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "2.2",
+     "name": "터파기·어스앵커",
+     "level": 2,
+     "start": "2026-07-09",
+     "finish": "2026-09-29",
+     "children": [
+      {
+       "code": "2.2.1",
+       "name": "1차 터파기(GL-3.0m)",
+       "level": 3,
+       "start": "2026-07-09",
+       "finish": "2026-07-16",
+       "trade": "토공",
+       "floor": "지하",
+       "duration": 6,
+       "calendar": "WX",
+       "late_start": "2026-07-14",
+       "late_finish": "2026-07-29",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.1.3",
+         "관계": "FS",
+         "시차": 7
+        },
+        {
+         "선행": "2.1.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 350
+       }
+      },
+      {
+       "code": "2.2.2",
+       "name": "1단 어스앵커 천공·그라우팅·양생·긴장",
+       "level": 3,
+       "start": "2026-07-20",
+       "finish": "2026-08-10",
+       "trade": "토공",
+       "floor": "지하",
+       "duration": 8,
+       "calendar": "WX",
+       "late_start": "2026-07-30",
+       "late_finish": "2026-08-14",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.2.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 300
+       }
+      },
+      {
+       "code": "2.2.3",
+       "name": "2차 터파기(GL-6.0m)",
+       "level": 3,
+       "start": "2026-08-14",
+       "finish": "2026-08-25",
+       "trade": "토공",
+       "floor": "지하",
+       "duration": 7,
+       "calendar": "WX",
+       "late_start": "2026-08-21",
+       "late_finish": "2026-08-31",
+       "total_float": 4,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.2.2",
+         "관계": "FS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 350
+       }
+      },
+      {
+       "code": "2.2.4",
+       "name": "2단 어스앵커 천공·그라우팅·양생·긴장",
+       "level": 3,
+       "start": "2026-08-26",
+       "finish": "2026-09-07",
+       "trade": "토공",
+       "floor": "지하",
+       "duration": 8,
+       "calendar": "WX",
+       "late_start": "2026-09-01",
+       "late_finish": "2026-09-11",
+       "total_float": 4,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.2.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 300
+       }
+      },
+      {
+       "code": "2.2.5",
+       "name": "3차 터파기·잔토 반출(GL-9.2m)",
+       "level": 3,
+       "start": "2026-09-11",
+       "finish": "2026-09-29",
+       "trade": "토공",
+       "floor": "지하",
+       "duration": 9,
+       "calendar": "WX",
+       "late_start": "2026-09-15",
+       "late_finish": "2026-09-30",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.2.4",
+         "관계": "FS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 350
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "3",
+   "name": "기초공사",
+   "level": 1,
+   "start": "2026-09-30",
+   "finish": "2026-11-06",
+   "children": [
+    {
+     "code": "3.1",
+     "name": "기초 하부 처리",
+     "level": 2,
+     "start": "2026-09-30",
+     "finish": "2026-10-19",
+     "children": [
+      {
+       "code": "3.1.1",
+       "name": "터파기면 정리·버림콘크리트",
+       "level": 3,
+       "start": "2026-09-30",
+       "finish": "2026-10-07",
+       "trade": "기초",
+       "floor": "B2",
+       "duration": 4,
+       "calendar": "WX",
+       "late_start": "2026-10-02",
+       "late_finish": "2026-10-08",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "2.2.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "3.1.2",
+       "name": "영구배수(유공관·배수판)·기초 하부 방수",
+       "level": 3,
+       "start": "2026-10-12",
+       "finish": "2026-10-19",
+       "trade": "기초",
+       "floor": "B2",
+       "duration": 6,
+       "calendar": "WX",
+       "late_start": "2026-10-14",
+       "late_finish": "2026-10-21",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "3.1.1",
+         "관계": "FS",
+         "시차": 2
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "3.2",
+     "name": "매트기초",
+     "level": 2,
+     "start": "2026-10-20",
+     "finish": "2026-11-06",
+     "children": [
+      {
+       "code": "3.2.1",
+       "name": "매트기초 철근 배근(집수정·E/V피트 포함)",
+       "level": 3,
+       "start": "2026-10-20",
+       "finish": "2026-11-04",
+       "trade": "기초",
+       "floor": "B2",
+       "duration": 12,
+       "calendar": "STD",
+       "late_start": "2026-10-22",
+       "late_finish": "2026-11-06",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "3.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "3.2.2",
+       "name": "매트기초 거푸집·매립물·크레인 기초 앵커 설치",
+       "level": 3,
+       "start": "2026-10-27",
+       "finish": "2026-11-02",
+       "trade": "기초",
+       "floor": "B2",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2026-11-02",
+       "late_finish": "2026-11-06",
+       "total_float": 4,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "3.2.1",
+         "관계": "SS",
+         "시차": 7
+        }
+       ]
+      },
+      {
+       "code": "3.2.3",
+       "name": "매트기초 콘크리트 타설(2구획 분할 타설)",
+       "level": 3,
+       "start": "2026-11-05",
+       "finish": "2026-11-06",
+       "trade": "기초",
+       "floor": "B2",
+       "duration": 2,
+       "calendar": "WX",
+       "late_start": "2026-11-09",
+       "late_finish": "2026-11-10",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "3.2.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "3.2.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "4",
+   "name": "철근콘크리트공사(골조)",
+   "level": 1,
+   "start": "2026-11-09",
+   "finish": "2027-05-14",
+   "children": [
+    {
+     "code": "4.1",
+     "name": "지하2층 골조",
+     "level": 2,
+     "start": "2026-11-09",
+     "finish": "2026-12-04",
+     "children": [
+      {
+       "code": "4.1.1",
+       "name": "지하2층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2026-11-09",
+       "finish": "2026-11-16",
+       "trade": "골조",
+       "floor": "B2",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2026-11-13",
+       "late_finish": "2026-11-20",
+       "total_float": 4,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "3.2.3",
+         "관계": "FS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.1.2",
+       "name": "지하2층 기둥·벽 거푸집(CIP면 합벽, 시공이음 지수판 포함)",
+       "level": 3,
+       "start": "2026-11-12",
+       "finish": "2026-11-20",
+       "trade": "골조",
+       "floor": "B2",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2026-11-18",
+       "late_finish": "2026-11-26",
+       "total_float": 4,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.1.1",
+         "관계": "SS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.1.3",
+       "name": "지하2층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2026-11-23",
+       "finish": "2026-12-01",
+       "trade": "골조",
+       "floor": "B2",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2026-11-27",
+       "late_finish": "2026-12-07",
+       "total_float": 4,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.1.4",
+       "name": "지하2층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2026-11-26",
+       "finish": "2026-12-03",
+       "trade": "골조",
+       "floor": "B2",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2026-12-01",
+       "late_finish": "2026-12-08",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.1.3",
+         "관계": "SS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.1.5",
+       "name": "지하2층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2026-12-04",
+       "finish": "2026-12-04",
+       "trade": "골조",
+       "floor": "B2",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2026-12-09",
+       "late_finish": "2026-12-09",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.1.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.1.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.1.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.2",
+     "name": "지하1층 골조",
+     "level": 2,
+     "start": "2026-12-07",
+     "finish": "2027-01-05",
+     "children": [
+      {
+       "code": "4.2.1",
+       "name": "지하1층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2026-12-07",
+       "finish": "2026-12-14",
+       "trade": "골조",
+       "floor": "B1",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2026-12-11",
+       "late_finish": "2026-12-18",
+       "total_float": 4,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.1.5",
+         "관계": "FS",
+         "시차": 1
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.2.2",
+       "name": "지하1층 기둥·벽 거푸집(CIP면 합벽, 시공이음 지수판 포함)",
+       "level": 3,
+       "start": "2026-12-10",
+       "finish": "2026-12-18",
+       "trade": "골조",
+       "floor": "B1",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2026-12-15",
+       "late_finish": "2026-12-23",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.2.1",
+         "관계": "SS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.2.3",
+       "name": "지하1층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2026-12-21",
+       "finish": "2026-12-30",
+       "trade": "골조",
+       "floor": "B1",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2026-12-24",
+       "late_finish": "2027-01-05",
+       "total_float": 3,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.2.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.2.4",
+       "name": "지하1층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2026-12-24",
+       "finish": "2027-01-04",
+       "trade": "골조",
+       "floor": "B1",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2026-12-28",
+       "late_finish": "2027-01-05",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.2.3",
+         "관계": "SS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.2.5",
+       "name": "지하1층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-01-05",
+       "finish": "2027-01-05",
+       "trade": "골조",
+       "floor": "B1",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-01-06",
+       "late_finish": "2027-01-06",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.2.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.2.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.2.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.3",
+     "name": "1층 골조",
+     "level": 2,
+     "start": "2027-01-07",
+     "finish": "2027-01-29",
+     "children": [
+      {
+       "code": "4.3.1",
+       "name": "1층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2027-01-07",
+       "finish": "2027-01-13",
+       "trade": "골조",
+       "floor": "1F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-01-08",
+       "late_finish": "2027-01-14",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.2.5",
+         "관계": "FS",
+         "시차": 1
+        },
+        {
+         "선행": "1.2.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.3.2",
+       "name": "1층 기둥·벽 거푸집",
+       "level": 3,
+       "start": "2027-01-11",
+       "finish": "2027-01-18",
+       "trade": "골조",
+       "floor": "1F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-01-11",
+       "late_finish": "2027-01-18",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.3.1",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.3.3",
+       "name": "1층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2027-01-19",
+       "finish": "2027-01-26",
+       "trade": "골조",
+       "floor": "1F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-01-19",
+       "late_finish": "2027-01-26",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.3.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.3.4",
+       "name": "1층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2027-01-22",
+       "finish": "2027-01-28",
+       "trade": "골조",
+       "floor": "1F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-01-22",
+       "late_finish": "2027-01-28",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.3.3",
+         "관계": "SS",
+         "시차": 3
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.3.5",
+       "name": "1층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-01-29",
+       "finish": "2027-01-29",
+       "trade": "골조",
+       "floor": "1F",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-01-29",
+       "late_finish": "2027-01-29",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.3.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.3.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.3.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.4",
+     "name": "2층 골조",
+     "level": 2,
+     "start": "2027-02-01",
+     "finish": "2027-02-19",
+     "children": [
+      {
+       "code": "4.4.1",
+       "name": "2층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-02-04",
+       "trade": "골조",
+       "floor": "2F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-02-01",
+       "late_finish": "2027-02-04",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.3.5",
+         "관계": "FS",
+         "시차": 1
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.4.2",
+       "name": "2층 기둥·벽 거푸집",
+       "level": 3,
+       "start": "2027-02-03",
+       "finish": "2027-02-11",
+       "trade": "골조",
+       "floor": "2F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-02-03",
+       "late_finish": "2027-02-11",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.4.1",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.4.3",
+       "name": "2층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2027-02-12",
+       "finish": "2027-02-18",
+       "trade": "골조",
+       "floor": "2F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-02-12",
+       "late_finish": "2027-02-18",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.4.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.4.4",
+       "name": "2층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2027-02-15",
+       "finish": "2027-02-18",
+       "trade": "골조",
+       "floor": "2F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-02-15",
+       "late_finish": "2027-02-18",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.4.3",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.4.5",
+       "name": "2층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-02-19",
+       "finish": "2027-02-19",
+       "trade": "골조",
+       "floor": "2F",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-02-19",
+       "late_finish": "2027-02-19",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.4.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.4.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.4.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.5",
+     "name": "3층 골조",
+     "level": 2,
+     "start": "2027-02-22",
+     "finish": "2027-03-12",
+     "children": [
+      {
+       "code": "4.5.1",
+       "name": "3층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2027-02-22",
+       "finish": "2027-02-25",
+       "trade": "골조",
+       "floor": "3F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-02-23",
+       "late_finish": "2027-02-26",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.4.5",
+         "관계": "FS",
+         "시차": 1
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.5.2",
+       "name": "3층 기둥·벽 거푸집",
+       "level": 3,
+       "start": "2027-02-24",
+       "finish": "2027-03-03",
+       "trade": "골조",
+       "floor": "3F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-02-25",
+       "late_finish": "2027-03-04",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.5.1",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.5.3",
+       "name": "3층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2027-03-04",
+       "finish": "2027-03-10",
+       "trade": "골조",
+       "floor": "3F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-03-05",
+       "late_finish": "2027-03-11",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.5.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.5.4",
+       "name": "3층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2027-03-08",
+       "finish": "2027-03-11",
+       "trade": "골조",
+       "floor": "3F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-03-09",
+       "late_finish": "2027-03-12",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.5.3",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.5.5",
+       "name": "3층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-03-12",
+       "finish": "2027-03-12",
+       "trade": "골조",
+       "floor": "3F",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-03-15",
+       "late_finish": "2027-03-15",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.5.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.5.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.5.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.6",
+     "name": "4층 골조",
+     "level": 2,
+     "start": "2027-03-15",
+     "finish": "2027-04-01",
+     "children": [
+      {
+       "code": "4.6.1",
+       "name": "4층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2027-03-15",
+       "finish": "2027-03-18",
+       "trade": "골조",
+       "floor": "4F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-03-17",
+       "late_finish": "2027-03-22",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.5.5",
+         "관계": "FS",
+         "시차": 1
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.6.2",
+       "name": "4층 기둥·벽 거푸집",
+       "level": 3,
+       "start": "2027-03-17",
+       "finish": "2027-03-23",
+       "trade": "골조",
+       "floor": "4F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-03-19",
+       "late_finish": "2027-03-25",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.6.1",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.6.3",
+       "name": "4층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2027-03-24",
+       "finish": "2027-03-30",
+       "trade": "골조",
+       "floor": "4F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-03-26",
+       "late_finish": "2027-04-01",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.6.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.6.4",
+       "name": "4층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2027-03-26",
+       "finish": "2027-03-31",
+       "trade": "골조",
+       "floor": "4F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-03-29",
+       "late_finish": "2027-04-01",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.6.3",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.6.5",
+       "name": "4층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-04-01",
+       "finish": "2027-04-01",
+       "trade": "골조",
+       "floor": "4F",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-04-02",
+       "late_finish": "2027-04-02",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.6.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.6.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.6.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.7",
+     "name": "5층 골조",
+     "level": 2,
+     "start": "2027-04-05",
+     "finish": "2027-04-22",
+     "children": [
+      {
+       "code": "4.7.1",
+       "name": "5층 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2027-04-05",
+       "finish": "2027-04-08",
+       "trade": "골조",
+       "floor": "5F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-04-07",
+       "late_finish": "2027-04-12",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.6.5",
+         "관계": "FS",
+         "시차": 1
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.7.2",
+       "name": "5층 기둥·벽 거푸집",
+       "level": 3,
+       "start": "2027-04-07",
+       "finish": "2027-04-13",
+       "trade": "골조",
+       "floor": "5F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-04-09",
+       "late_finish": "2027-04-15",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.7.1",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.7.3",
+       "name": "5층 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2027-04-14",
+       "finish": "2027-04-20",
+       "trade": "골조",
+       "floor": "5F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-04-16",
+       "late_finish": "2027-04-22",
+       "total_float": 2,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.7.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.7.4",
+       "name": "5층 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2027-04-16",
+       "finish": "2027-04-21",
+       "trade": "골조",
+       "floor": "5F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-04-19",
+       "late_finish": "2027-04-22",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.7.3",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.7.5",
+       "name": "5층 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-04-22",
+       "finish": "2027-04-22",
+       "trade": "골조",
+       "floor": "5F",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-04-23",
+       "late_finish": "2027-04-23",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.7.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.7.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.7.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "4.8",
+     "name": "옥탑·지붕 골조",
+     "level": 2,
+     "start": "2027-04-26",
+     "finish": "2027-05-14",
+     "children": [
+      {
+       "code": "4.8.1",
+       "name": "옥탑·지붕 먹매김·기둥·벽 철근 배근",
+       "level": 3,
+       "start": "2027-04-26",
+       "finish": "2027-04-28",
+       "trade": "골조",
+       "floor": "PH",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2027-04-27",
+       "late_finish": "2027-04-29",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.7.5",
+         "관계": "FS",
+         "시차": 1
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 150
+       }
+      },
+      {
+       "code": "4.8.2",
+       "name": "옥탑·지붕 기둥·벽 거푸집",
+       "level": 3,
+       "start": "2027-04-28",
+       "finish": "2027-05-04",
+       "trade": "골조",
+       "floor": "PH",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-04-29",
+       "late_finish": "2027-05-06",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.8.1",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.8.3",
+       "name": "옥탑·지붕 보·슬래브 거푸집·동바리",
+       "level": 3,
+       "start": "2027-05-06",
+       "finish": "2027-05-11",
+       "trade": "골조",
+       "floor": "PH",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-05-07",
+       "late_finish": "2027-05-12",
+       "total_float": 1,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.8.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 160
+       }
+      },
+      {
+       "code": "4.8.4",
+       "name": "옥탑·지붕 보·슬래브 철근·설비전기 매립",
+       "level": 3,
+       "start": "2027-05-10",
+       "finish": "2027-05-12",
+       "trade": "골조",
+       "floor": "PH",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2027-05-10",
+       "late_finish": "2027-05-12",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.8.3",
+         "관계": "SS",
+         "시차": 2
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 140
+       }
+      },
+      {
+       "code": "4.8.5",
+       "name": "옥탑·지붕 타설 전 검측·콘크리트 타설",
+       "level": 3,
+       "start": "2027-05-14",
+       "finish": "2027-05-14",
+       "trade": "골조",
+       "floor": "PH",
+       "duration": 1,
+       "calendar": "WX",
+       "late_start": "2027-05-14",
+       "late_finish": "2027-05-14",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "4.8.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.8.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.8.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "5",
+   "name": "내부 마감공사",
+   "level": 1,
+   "start": "2027-01-06",
+   "finish": "2027-07-16",
+   "children": [
+    {
+     "code": "5.1",
+     "name": "지하2층 마감",
+     "level": 2,
+     "start": "2027-02-01",
+     "finish": "2027-03-18",
+     "children": [
+      {
+       "code": "5.1.1",
+       "name": "지하2층 조적(기계·전기실 벽체)",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-02-05",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-04-16",
+       "late_finish": "2027-04-22",
+       "total_float": 51,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.3.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.8.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.1.2",
+       "name": "지하2층 미장·부속실 방수",
+       "level": 3,
+       "start": "2027-02-10",
+       "finish": "2027-02-15",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-04-26",
+       "late_finish": "2027-04-29",
+       "total_float": 52,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.1.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.1.3",
+       "name": "지하2층 방화문·셔터 설치",
+       "level": 3,
+       "start": "2027-02-15",
+       "finish": "2027-02-17",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2027-05-10",
+       "late_finish": "2027-05-12",
+       "total_float": 57,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.1.2",
+         "관계": "SS",
+         "시차": 3
+        }
+       ]
+      },
+      {
+       "code": "5.1.4",
+       "name": "지하2층 천장틀·석고보드(부속실 한정)",
+       "level": 3,
+       "start": "2027-02-25",
+       "finish": "2027-03-05",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-05-14",
+       "late_finish": "2027-05-21",
+       "total_float": 52,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.1.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.1.5",
+       "name": "지하2층 주차장 바닥 에폭시 하도·중도",
+       "level": 3,
+       "start": "2027-03-08",
+       "finish": "2027-03-12",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-06-01",
+       "late_finish": "2027-06-07",
+       "total_float": 58,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.1.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.1.6",
+       "name": "지하2층 도장·주차 라인(에폭시 상도는 준공 전)",
+       "level": 3,
+       "start": "2027-03-15",
+       "finish": "2027-03-18",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-06-11",
+       "late_finish": "2027-06-16",
+       "total_float": 61,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.1.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.2",
+     "name": "지하1층 마감",
+     "level": 2,
+     "start": "2027-02-22",
+     "finish": "2027-03-26",
+     "children": [
+      {
+       "code": "5.2.1",
+       "name": "지하1층 조적(기계·전기실 벽체)",
+       "level": 3,
+       "start": "2027-02-22",
+       "finish": "2027-02-26",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-04-23",
+       "late_finish": "2027-04-29",
+       "total_float": 43,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.4.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.8.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.2.2",
+       "name": "지하1층 미장·부속실 방수",
+       "level": 3,
+       "start": "2027-03-02",
+       "finish": "2027-03-05",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-04-30",
+       "late_finish": "2027-05-07",
+       "total_float": 43,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.2.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.2.3",
+       "name": "지하1층 방화문·셔터 설치",
+       "level": 3,
+       "start": "2027-03-05",
+       "finish": "2027-03-09",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2027-05-14",
+       "late_finish": "2027-05-18",
+       "total_float": 47,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.2.2",
+         "관계": "SS",
+         "시차": 3
+        },
+        {
+         "선행": "5.1.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.2.4",
+       "name": "지하1층 천장틀·석고보드(부속실 한정)",
+       "level": 3,
+       "start": "2027-03-08",
+       "finish": "2027-03-15",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-05-24",
+       "late_finish": "2027-05-31",
+       "total_float": 52,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.2.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.2.5",
+       "name": "지하1층 주차장 바닥 에폭시 하도·중도",
+       "level": 3,
+       "start": "2027-03-16",
+       "finish": "2027-03-22",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-06-08",
+       "late_finish": "2027-06-14",
+       "total_float": 57,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.2.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.2.6",
+       "name": "지하1층 도장·주차 라인(에폭시 상도는 준공 전)",
+       "level": 3,
+       "start": "2027-03-23",
+       "finish": "2027-03-26",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-06-17",
+       "late_finish": "2027-06-22",
+       "total_float": 59,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.2.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.3",
+     "name": "1층 마감",
+     "level": 2,
+     "start": "2027-03-15",
+     "finish": "2027-05-31",
+     "children": [
+      {
+       "code": "5.3.1",
+       "name": "1층 조적·경량벽체",
+       "level": 3,
+       "start": "2027-03-15",
+       "finish": "2027-03-18",
+       "trade": "마감",
+       "floor": "1F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-04-30",
+       "late_finish": "2027-05-07",
+       "total_float": 34,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.5.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.3.2",
+       "name": "1층 미장·화장실 방수",
+       "level": 3,
+       "start": "2027-03-19",
+       "finish": "2027-03-25",
+       "trade": "마감",
+       "floor": "1F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-05-10",
+       "late_finish": "2027-05-17",
+       "total_float": 34,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.3.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.3.3",
+       "name": "1층 창호 설치(외부창호·유리·방화문)",
+       "level": 3,
+       "start": "2027-03-22",
+       "finish": "2027-03-29",
+       "trade": "마감",
+       "floor": "1F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-05-19",
+       "late_finish": "2027-05-26",
+       "total_float": 39,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.3.2",
+         "관계": "SS",
+         "시차": 3
+        },
+        {
+         "선행": "5.2.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.3.4",
+       "name": "1층 천장틀·석고보드",
+       "level": 3,
+       "start": "2027-04-15",
+       "finish": "2027-04-22",
+       "trade": "마감",
+       "floor": "1F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-06-01",
+       "late_finish": "2027-06-08",
+       "total_float": 30,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.3.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.3.5",
+       "name": "1층 바닥·벽 타일·석재",
+       "level": 3,
+       "start": "2027-04-23",
+       "finish": "2027-04-30",
+       "trade": "마감",
+       "floor": "1F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-06-15",
+       "late_finish": "2027-06-22",
+       "total_float": 34,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.3.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.3.6",
+       "name": "1층 도장·수장(바닥재·벽지)",
+       "level": 3,
+       "start": "2027-05-25",
+       "finish": "2027-05-31",
+       "trade": "마감",
+       "floor": "1F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-06-23",
+       "late_finish": "2027-06-29",
+       "total_float": 21,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.3.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.3.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.6",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "6.1.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.4",
+     "name": "2층 마감",
+     "level": 2,
+     "start": "2027-04-02",
+     "finish": "2027-06-08",
+     "children": [
+      {
+       "code": "5.4.1",
+       "name": "2층 조적·경량벽체",
+       "level": 3,
+       "start": "2027-04-02",
+       "finish": "2027-04-08",
+       "trade": "마감",
+       "floor": "2F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-05-10",
+       "late_finish": "2027-05-17",
+       "total_float": 24,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.6.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.3.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.4.2",
+       "name": "2층 미장·화장실 방수",
+       "level": 3,
+       "start": "2027-04-09",
+       "finish": "2027-04-16",
+       "trade": "마감",
+       "floor": "2F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-05-18",
+       "late_finish": "2027-05-25",
+       "total_float": 24,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.4.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.3.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.4.3",
+       "name": "2층 창호 설치(외부창호·유리·방화문)",
+       "level": 3,
+       "start": "2027-04-12",
+       "finish": "2027-04-15",
+       "trade": "마감",
+       "floor": "2F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-05-27",
+       "late_finish": "2027-06-01",
+       "total_float": 30,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.4.2",
+         "관계": "SS",
+         "시차": 3
+        },
+        {
+         "선행": "5.3.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.4.4",
+       "name": "2층 천장틀·석고보드",
+       "level": 3,
+       "start": "2027-04-23",
+       "finish": "2027-05-04",
+       "trade": "마감",
+       "floor": "2F",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2027-06-09",
+       "late_finish": "2027-06-17",
+       "total_float": 30,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.4.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.3.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.4.5",
+       "name": "2층 바닥·벽 타일·석재",
+       "level": 3,
+       "start": "2027-05-06",
+       "finish": "2027-05-12",
+       "trade": "마감",
+       "floor": "2F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-06-23",
+       "late_finish": "2027-06-29",
+       "total_float": 33,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.4.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.3.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.4.6",
+       "name": "2층 도장·수장(바닥재·벽지)",
+       "level": 3,
+       "start": "2027-06-01",
+       "finish": "2027-06-08",
+       "trade": "마감",
+       "floor": "2F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-06-30",
+       "late_finish": "2027-07-07",
+       "total_float": 21,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.4.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.4.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.3.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.5",
+     "name": "3층 마감",
+     "level": 2,
+     "start": "2027-04-23",
+     "finish": "2027-06-16",
+     "children": [
+      {
+       "code": "5.5.1",
+       "name": "3층 조적·경량벽체",
+       "level": 3,
+       "start": "2027-04-23",
+       "finish": "2027-04-29",
+       "trade": "마감",
+       "floor": "3F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-05-19",
+       "late_finish": "2027-05-25",
+       "total_float": 15,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.7.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.4.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.5.2",
+       "name": "3층 미장·화장실 방수",
+       "level": 3,
+       "start": "2027-04-30",
+       "finish": "2027-05-11",
+       "trade": "마감",
+       "floor": "3F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-05-26",
+       "late_finish": "2027-06-02",
+       "total_float": 15,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.5.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.4.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.5.3",
+       "name": "3층 창호 설치(외부창호·유리·방화문)",
+       "level": 3,
+       "start": "2027-05-04",
+       "finish": "2027-05-10",
+       "trade": "마감",
+       "floor": "3F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-06-02",
+       "late_finish": "2027-06-07",
+       "total_float": 19,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.5.2",
+         "관계": "SS",
+         "시차": 3
+        },
+        {
+         "선행": "5.4.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.5.4",
+       "name": "3층 천장틀·석고보드",
+       "level": 3,
+       "start": "2027-05-12",
+       "finish": "2027-05-21",
+       "trade": "마감",
+       "floor": "3F",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2027-06-18",
+       "late_finish": "2027-06-28",
+       "total_float": 26,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.5.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.4.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.5.5",
+       "name": "3층 바닥·벽 타일·석재",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-05-28",
+       "trade": "마감",
+       "floor": "3F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-07-01",
+       "late_finish": "2027-07-07",
+       "total_float": 28,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.5.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.4.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.5.6",
+       "name": "3층 도장·수장(바닥재·벽지)",
+       "level": 3,
+       "start": "2027-06-09",
+       "finish": "2027-06-16",
+       "trade": "마감",
+       "floor": "3F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-07-08",
+       "late_finish": "2027-07-15",
+       "total_float": 21,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.5.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.5.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.4.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.6",
+     "name": "4층 마감",
+     "level": 2,
+     "start": "2027-05-17",
+     "finish": "2027-07-07",
+     "children": [
+      {
+       "code": "5.6.1",
+       "name": "4층 조적·경량벽체",
+       "level": 3,
+       "start": "2027-05-17",
+       "finish": "2027-05-21",
+       "trade": "마감",
+       "floor": "4F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-05-27",
+       "late_finish": "2027-06-02",
+       "total_float": 8,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.5.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.6.2",
+       "name": "4층 미장·화장실 방수",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-05-31",
+       "trade": "마감",
+       "floor": "4F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-06-03",
+       "late_finish": "2027-06-10",
+       "total_float": 8,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.6.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.5.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.6.3",
+       "name": "4층 창호 설치(외부창호·유리·방화문)",
+       "level": 3,
+       "start": "2027-05-27",
+       "finish": "2027-06-01",
+       "trade": "마감",
+       "floor": "4F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-06-08",
+       "late_finish": "2027-06-11",
+       "total_float": 8,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.6.2",
+         "관계": "SS",
+         "시차": 3
+        },
+        {
+         "선행": "5.5.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.6.4",
+       "name": "4층 천장틀·석고보드",
+       "level": 3,
+       "start": "2027-06-14",
+       "finish": "2027-06-22",
+       "trade": "마감",
+       "floor": "4F",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2027-06-29",
+       "late_finish": "2027-07-07",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.6.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.5.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.6.5",
+       "name": "4층 바닥·벽 타일·석재",
+       "level": 3,
+       "start": "2027-06-23",
+       "finish": "2027-06-29",
+       "trade": "마감",
+       "floor": "4F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-07-09",
+       "late_finish": "2027-07-15",
+       "total_float": 12,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.6.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.5.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.6.6",
+       "name": "4층 도장·수장(바닥재·벽지)",
+       "level": 3,
+       "start": "2027-06-30",
+       "finish": "2027-07-07",
+       "trade": "마감",
+       "floor": "4F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-07-16",
+       "late_finish": "2027-07-26",
+       "total_float": 12,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.6.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.6.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.5.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.7",
+     "name": "5층 마감",
+     "level": 2,
+     "start": "2027-05-24",
+     "finish": "2027-07-16",
+     "children": [
+      {
+       "code": "5.7.1",
+       "name": "5층 조적·경량벽체",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-05-28",
+       "trade": "마감",
+       "floor": "5F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-06-04",
+       "late_finish": "2027-06-10",
+       "total_float": 9,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 7
+        },
+        {
+         "선행": "5.6.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.7.2",
+       "name": "5층 미장·화장실 방수",
+       "level": 3,
+       "start": "2027-06-01",
+       "finish": "2027-06-08",
+       "trade": "마감",
+       "floor": "5F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-06-11",
+       "late_finish": "2027-06-18",
+       "total_float": 8,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.6.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      },
+      {
+       "code": "5.7.3",
+       "name": "5층 창호 설치(외부창호·유리·방화문)",
+       "level": 3,
+       "start": "2027-06-04",
+       "finish": "2027-06-09",
+       "trade": "마감",
+       "floor": "5F",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-06-14",
+       "late_finish": "2027-06-17",
+       "total_float": 6,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.2",
+         "관계": "SS",
+         "시차": 3
+        },
+        {
+         "선행": "5.6.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.7.4",
+       "name": "5층 천장틀·석고보드",
+       "level": 3,
+       "start": "2027-06-23",
+       "finish": "2027-07-01",
+       "trade": "마감",
+       "floor": "5F",
+       "duration": 7,
+       "calendar": "STD",
+       "late_start": "2027-07-08",
+       "late_finish": "2027-07-16",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.6.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 130
+       }
+      },
+      {
+       "code": "5.7.5",
+       "name": "5층 바닥·벽 타일·석재",
+       "level": 3,
+       "start": "2027-07-02",
+       "finish": "2027-07-08",
+       "trade": "마감",
+       "floor": "5F",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-07-20",
+       "late_finish": "2027-07-26",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.6.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "5.7.6",
+       "name": "5층 도장·수장(바닥재·벽지)",
+       "level": 3,
+       "start": "2027-07-09",
+       "finish": "2027-07-16",
+       "trade": "마감",
+       "floor": "5F",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-07-27",
+       "late_finish": "2027-08-03",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.7.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.6.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 1,
+        "cost_per_day_만원": 100
+       }
+      }
+     ]
+    },
+    {
+     "code": "5.8",
+     "name": "지하 외벽 누수처리·배수벽",
+     "level": 2,
+     "start": "2027-01-06",
+     "finish": "2027-02-10",
+     "children": [
+      {
+       "code": "5.8.1",
+       "name": "지하2층 외벽 누수보수·배수층·배수벽",
+       "level": 3,
+       "start": "2027-01-06",
+       "finish": "2027-01-13",
+       "trade": "마감",
+       "floor": "B2",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-04-07",
+       "late_finish": "2027-04-14",
+       "total_float": 62,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.2.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "5.8.2",
+       "name": "지하1층 외벽 누수보수·배수층·배수벽",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-02-10",
+       "trade": "마감",
+       "floor": "B1",
+       "duration": 6,
+       "calendar": "STD",
+       "late_start": "2027-04-15",
+       "late_finish": "2027-04-22",
+       "total_float": 50,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.3.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.8.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "6",
+   "name": "외부·지붕·부대공사",
+   "level": 1,
+   "start": "2027-04-02",
+   "finish": "2027-09-03",
+   "children": [
+    {
+     "code": "6.1",
+     "name": "지붕·외벽",
+     "level": 2,
+     "start": "2027-04-02",
+     "finish": "2027-06-28",
+     "children": [
+      {
+       "code": "6.1.1",
+       "name": "옥상 방수(우레탄 복합방수)",
+       "level": 3,
+       "start": "2027-06-07",
+       "finish": "2027-06-15",
+       "trade": "방수",
+       "floor": "PH",
+       "duration": 6,
+       "calendar": "WX",
+       "late_start": "2027-08-17",
+       "late_finish": "2027-08-27",
+       "total_float": 40,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 21
+        }
+       ]
+      },
+      {
+       "code": "6.1.2",
+       "name": "옥상 누름층·옥상 마감",
+       "level": 3,
+       "start": "2027-06-16",
+       "finish": "2027-06-23",
+       "trade": "외부",
+       "floor": "PH",
+       "duration": 5,
+       "calendar": "WX",
+       "late_start": "2027-08-30",
+       "late_finish": "2027-09-03",
+       "total_float": 40,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "6.1.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "6.1.3",
+       "name": "외벽 단열·마감(석재·금속패널) 저층부 1~3층",
+       "level": 3,
+       "start": "2027-04-02",
+       "finish": "2027-05-04",
+       "trade": "외부",
+       "floor": "1F~3F",
+       "duration": 20,
+       "calendar": "WX",
+       "late_start": "2027-04-16",
+       "late_finish": "2027-05-21",
+       "total_float": 9,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "1.2.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.6.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 200
+       }
+      },
+      {
+       "code": "6.1.4",
+       "name": "외벽 단열·마감 고층부 4층~옥탑",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-06-17",
+       "trade": "외부",
+       "floor": "4F~PH",
+       "duration": 18,
+       "calendar": "WX",
+       "late_start": "2027-05-24",
+       "late_finish": "2027-06-17",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "6.1.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "1.2.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 7
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 200
+       }
+      },
+      {
+       "code": "6.1.5",
+       "name": "1층 커튼월·출입문 설치",
+       "level": 3,
+       "start": "2027-05-06",
+       "finish": "2027-05-24",
+       "trade": "외부",
+       "floor": "1F",
+       "duration": 12,
+       "calendar": "STD",
+       "late_start": "2027-06-02",
+       "late_finish": "2027-06-17",
+       "total_float": 18,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "6.1.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "6.1.6",
+       "name": "외벽 실링·외부 청소",
+       "level": 3,
+       "start": "2027-06-18",
+       "finish": "2027-06-28",
+       "trade": "외부",
+       "floor": "외부",
+       "duration": 5,
+       "calendar": "WX",
+       "late_start": "2027-06-18",
+       "late_finish": "2027-06-28",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "6.1.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "6.1.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.7.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "6.2",
+     "name": "부대토목·조경",
+     "level": 2,
+     "start": "2027-07-13",
+     "finish": "2027-09-03",
+     "children": [
+      {
+       "code": "6.2.1",
+       "name": "대지 내 우·오수 배관",
+       "level": 3,
+       "start": "2027-07-13",
+       "finish": "2027-07-27",
+       "trade": "부대",
+       "floor": "대지",
+       "duration": 8,
+       "calendar": "WX",
+       "late_start": "2027-07-13",
+       "late_finish": "2027-07-27",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "1.2.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "1.2.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "6.2.2",
+       "name": "포장·주차 진입로·경계석",
+       "level": 3,
+       "start": "2027-08-09",
+       "finish": "2027-08-26",
+       "trade": "부대",
+       "floor": "대지",
+       "duration": 10,
+       "calendar": "WX",
+       "late_start": "2027-08-09",
+       "late_finish": "2027-08-26",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "6.2.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 250
+       }
+      },
+      {
+       "code": "6.2.3",
+       "name": "조경 식재",
+       "level": 3,
+       "start": "2027-08-27",
+       "finish": "2027-09-03",
+       "trade": "부대",
+       "floor": "대지",
+       "duration": 6,
+       "calendar": "WX",
+       "late_start": "2027-08-27",
+       "late_finish": "2027-09-03",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "6.2.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "7",
+   "name": "기계·전기·소방·승강기 설비",
+   "level": 1,
+   "start": "2026-11-09",
+   "finish": "2027-08-19",
+   "children": [
+    {
+     "code": "7.1",
+     "name": "기계설비",
+     "level": 2,
+     "start": "2027-02-01",
+     "finish": "2027-07-27",
+     "children": [
+      {
+       "code": "7.1.1",
+       "name": "기계 배관·덕트(지하층)",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-02-23",
+       "trade": "기계",
+       "floor": "B2~B1",
+       "duration": 15,
+       "calendar": "STD",
+       "late_start": "2027-04-20",
+       "late_finish": "2027-05-12",
+       "total_float": 53,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.3.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.1.2",
+       "name": "기계 배관·덕트(1~3층)",
+       "level": 3,
+       "start": "2027-03-22",
+       "finish": "2027-04-14",
+       "trade": "기계",
+       "floor": "1F~3F",
+       "duration": 18,
+       "calendar": "STD",
+       "late_start": "2027-05-04",
+       "late_finish": "2027-05-31",
+       "total_float": 30,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.5.5",
+         "관계": "FS",
+         "시차": 7
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.1.3",
+       "name": "기계 배관·덕트(4~5층·옥탑)",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-06-11",
+       "trade": "기계",
+       "floor": "4F~PH",
+       "duration": 15,
+       "calendar": "STD",
+       "late_start": "2027-06-08",
+       "late_finish": "2027-06-28",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 7
+        },
+        {
+         "선행": "7.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.1.4",
+       "name": "기계실 장비 설치(펌프·저수조·공조기)",
+       "level": 3,
+       "start": "2027-02-16",
+       "finish": "2027-03-04",
+       "trade": "기계",
+       "floor": "B2",
+       "duration": 12,
+       "calendar": "STD",
+       "late_start": "2027-08-02",
+       "late_finish": "2027-08-18",
+       "total_float": 114,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.1.5",
+       "name": "위생기구·기계 기구류 부착",
+       "level": 3,
+       "start": "2027-07-09",
+       "finish": "2027-07-27",
+       "trade": "기계",
+       "floor": "전층",
+       "duration": 12,
+       "calendar": "STD",
+       "late_start": "2027-08-02",
+       "late_finish": "2027-08-18",
+       "total_float": 15,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 110
+       }
+      }
+     ]
+    },
+    {
+     "code": "7.2",
+     "name": "전기·통신설비",
+     "level": 2,
+     "start": "2027-02-01",
+     "finish": "2027-08-02",
+     "children": [
+      {
+       "code": "7.2.1",
+       "name": "전기·통신 배관배선(지하층)",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-02-23",
+       "trade": "전기",
+       "floor": "B2~B1",
+       "duration": 15,
+       "calendar": "STD",
+       "late_start": "2027-04-20",
+       "late_finish": "2027-05-12",
+       "total_float": 53,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.3.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.2.2",
+       "name": "전기·통신 배관배선(1~3층)",
+       "level": 3,
+       "start": "2027-03-22",
+       "finish": "2027-04-14",
+       "trade": "전기",
+       "floor": "1F~3F",
+       "duration": 18,
+       "calendar": "STD",
+       "late_start": "2027-05-04",
+       "late_finish": "2027-05-31",
+       "total_float": 30,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.5.5",
+         "관계": "FS",
+         "시차": 7
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.2.3",
+       "name": "전기·통신 배관배선(4~5층·옥탑)",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-06-11",
+       "trade": "전기",
+       "floor": "4F~PH",
+       "duration": 15,
+       "calendar": "STD",
+       "late_start": "2027-06-08",
+       "late_finish": "2027-06-28",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 7
+        },
+        {
+         "선행": "7.2.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 3,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.2.4",
+       "name": "수배전반 승인도·제작·반입(장납기)",
+       "level": 3,
+       "start": "2027-02-01",
+       "finish": "2027-04-28",
+       "trade": "전기",
+       "floor": "공장",
+       "duration": 60,
+       "calendar": "STD",
+       "late_start": "2027-04-28",
+       "late_finish": "2027-07-26",
+       "total_float": 59,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.3.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.2.5",
+       "name": "수변전설비·비상발전기 설치",
+       "level": 3,
+       "start": "2027-04-29",
+       "finish": "2027-05-17",
+       "trade": "전기",
+       "floor": "B2",
+       "duration": 10,
+       "calendar": "STD",
+       "late_start": "2027-07-27",
+       "late_finish": "2027-08-09",
+       "total_float": 59,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.2.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.2.6",
+       "name": "조명·배선기구 부착",
+       "level": 3,
+       "start": "2027-07-20",
+       "finish": "2027-08-02",
+       "trade": "전기",
+       "floor": "전층",
+       "duration": 10,
+       "calendar": "STD",
+       "late_start": "2027-08-04",
+       "late_finish": "2027-08-18",
+       "total_float": 11,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 110
+       }
+      }
+     ]
+    },
+    {
+     "code": "7.3",
+     "name": "소방설비",
+     "level": 2,
+     "start": "2027-02-10",
+     "finish": "2027-08-13",
+     "children": [
+      {
+       "code": "7.3.1",
+       "name": "소방 배관·수압시험(지하층)",
+       "level": 3,
+       "start": "2027-02-10",
+       "finish": "2027-02-24",
+       "trade": "소방",
+       "floor": "B2~B1",
+       "duration": 11,
+       "calendar": "STD",
+       "late_start": "2027-04-26",
+       "late_finish": "2027-05-12",
+       "total_float": 52,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.1.1",
+         "관계": "SS",
+         "시차": 5
+        }
+       ]
+      },
+      {
+       "code": "7.3.2",
+       "name": "소방 배관·수압시험(1~3층)",
+       "level": 3,
+       "start": "2027-03-29",
+       "finish": "2027-04-12",
+       "trade": "소방",
+       "floor": "1F~3F",
+       "duration": 11,
+       "calendar": "STD",
+       "late_start": "2027-05-17",
+       "late_finish": "2027-05-31",
+       "total_float": 32,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.5.5",
+         "관계": "FS",
+         "시차": 7
+        },
+        {
+         "선행": "7.3.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.2",
+         "관계": "SS",
+         "시차": 5
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.3.3",
+       "name": "소방 배관·수압시험(4층~옥탑)",
+       "level": 3,
+       "start": "2027-05-24",
+       "finish": "2027-06-07",
+       "trade": "소방",
+       "floor": "4F~PH",
+       "duration": 11,
+       "calendar": "STD",
+       "late_start": "2027-06-14",
+       "late_finish": "2027-06-28",
+       "total_float": 15,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 7
+        },
+        {
+         "선행": "7.3.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 2,
+        "cost_per_day_만원": 120
+       }
+      },
+      {
+       "code": "7.3.4",
+       "name": "스프링클러 헤드·감지기·소화설비 부착",
+       "level": 3,
+       "start": "2027-07-02",
+       "finish": "2027-07-13",
+       "trade": "소방",
+       "floor": "전층",
+       "duration": 8,
+       "calendar": "STD",
+       "late_start": "2027-08-11",
+       "late_finish": "2027-08-23",
+       "total_float": 27,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.3.5",
+       "name": "소방 시험·자체점검",
+       "level": 3,
+       "start": "2027-08-09",
+       "finish": "2027-08-13",
+       "trade": "소방",
+       "floor": "전층",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-08-24",
+       "late_finish": "2027-08-30",
+       "total_float": 10,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.3.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.6",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "7.4",
+     "name": "승강기",
+     "level": 2,
+     "start": "2026-11-09",
+     "finish": "2027-08-03",
+     "children": [
+      {
+       "code": "7.4.1",
+       "name": "승강기 승인도·제작·반입(장납기)",
+       "level": 3,
+       "start": "2026-11-09",
+       "finish": "2027-02-18",
+       "trade": "승강기",
+       "floor": "공장",
+       "duration": 70,
+       "calendar": "STD",
+       "late_start": "2027-03-22",
+       "late_finish": "2027-06-30",
+       "total_float": 90,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "3.2.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.4.2",
+       "name": "승강로 인계(치수 확인·피트 방수·임시 전원)",
+       "level": 3,
+       "start": "2027-05-31",
+       "finish": "2027-06-02",
+       "trade": "승강기",
+       "floor": "E/V",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2027-06-28",
+       "late_finish": "2027-06-30",
+       "total_float": 20,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.8.5",
+         "관계": "FS",
+         "시차": 14
+        }
+       ]
+      },
+      {
+       "code": "7.4.3",
+       "name": "승강기 설치(2대: 레일·권상기·카)",
+       "level": 3,
+       "start": "2027-06-03",
+       "finish": "2027-07-22",
+       "trade": "승강기",
+       "floor": "E/V",
+       "duration": 35,
+       "calendar": "STD",
+       "late_start": "2027-07-01",
+       "late_finish": "2027-08-20",
+       "total_float": 20,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.4.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.4.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ],
+       "crash": {
+        "max_days": 5,
+        "cost_per_day_만원": 300
+       }
+      },
+      {
+       "code": "7.4.4",
+       "name": "승강기 시운전·검사 준비",
+       "level": 3,
+       "start": "2027-07-23",
+       "finish": "2027-08-03",
+       "trade": "승강기",
+       "floor": "E/V",
+       "duration": 8,
+       "calendar": "STD",
+       "late_start": "2027-08-23",
+       "late_finish": "2027-09-01",
+       "total_float": 20,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.4.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.3",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "code": "7.5",
+     "name": "전력·용수 인입·시운전",
+     "level": 2,
+     "start": "2027-03-15",
+     "finish": "2027-08-19",
+     "children": [
+      {
+       "code": "7.5.1",
+       "name": "전력 공급 신청·한전 협의",
+       "level": 3,
+       "start": "2027-03-15",
+       "finish": "2027-04-09",
+       "trade": "전기",
+       "floor": "대지",
+       "duration": 20,
+       "calendar": "STD",
+       "late_start": "2027-07-12",
+       "late_finish": "2027-08-09",
+       "total_float": 82,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "4.5.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.5.2",
+       "name": "수전 인입공사·사용전검사(보완 포함)",
+       "level": 3,
+       "start": "2027-05-18",
+       "finish": "2027-05-24",
+       "trade": "전기",
+       "floor": "대지",
+       "duration": 5,
+       "calendar": "STD",
+       "late_start": "2027-08-10",
+       "late_finish": "2027-08-17",
+       "total_float": 59,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.5.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.5.3",
+       "name": "송전",
+       "level": 3,
+       "start": "2027-05-25",
+       "finish": "2027-05-25",
+       "trade": "전기",
+       "floor": "대지",
+       "duration": 1,
+       "calendar": "STD",
+       "late_start": "2027-08-18",
+       "late_finish": "2027-08-18",
+       "total_float": 59,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.5.2",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.5.4",
+       "name": "상수도·오수 인입 연결",
+       "level": 3,
+       "start": "2027-07-29",
+       "finish": "2027-08-06",
+       "trade": "기계",
+       "floor": "대지",
+       "duration": 6,
+       "calendar": "WX",
+       "late_start": "2027-07-29",
+       "late_finish": "2027-08-06",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "6.2.1",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "7.5.5",
+       "name": "기계·전기 종합 시운전",
+       "level": 3,
+       "start": "2027-08-09",
+       "finish": "2027-08-19",
+       "trade": "설비",
+       "floor": "전층",
+       "duration": 8,
+       "calendar": "STD",
+       "late_start": "2027-08-19",
+       "late_finish": "2027-08-30",
+       "total_float": 7,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.1.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.2.6",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.1.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "code": "8",
+   "name": "준공",
+   "level": 1,
+   "start": "2027-07-20",
+   "finish": "2027-10-15",
+   "children": [
+    {
+     "code": "8.1",
+     "name": "검사·사용승인·정리",
+     "level": 2,
+     "start": "2027-07-20",
+     "finish": "2027-10-15",
+     "children": [
+      {
+       "code": "8.1.1",
+       "name": "방화구획 관통부 충전·방화문 기능 확인",
+       "level": 3,
+       "start": "2027-07-20",
+       "finish": "2027-07-22",
+       "trade": "준공",
+       "floor": "전층",
+       "duration": 3,
+       "calendar": "STD",
+       "late_start": "2027-08-26",
+       "late_finish": "2027-08-30",
+       "total_float": 26,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "5.7.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "8.1.2",
+       "name": "소방 완공검사",
+       "level": 3,
+       "start": "2027-08-20",
+       "finish": "2027-08-25",
+       "trade": "준공",
+       "floor": "전층",
+       "duration": 4,
+       "calendar": "STD",
+       "late_start": "2027-08-31",
+       "late_finish": "2027-09-03",
+       "total_float": 7,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "8.1.1",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.3.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "8.1.3",
+       "name": "승강기 완성검사",
+       "level": 3,
+       "start": "2027-08-04",
+       "finish": "2027-08-05",
+       "trade": "준공",
+       "floor": "E/V",
+       "duration": 2,
+       "calendar": "STD",
+       "late_start": "2027-09-02",
+       "late_finish": "2027-09-03",
+       "total_float": 20,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.4.4",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "8.1.4",
+       "name": "정보통신 사용전검사",
+       "level": 3,
+       "start": "2027-08-03",
+       "finish": "2027-08-04",
+       "trade": "준공",
+       "floor": "전층",
+       "duration": 2,
+       "calendar": "STD",
+       "late_start": "2027-09-02",
+       "late_finish": "2027-09-03",
+       "total_float": 21,
+       "critical": false,
+       "predecessors": [
+        {
+         "선행": "7.2.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "8.1.5",
+       "name": "사용승인 신청·처리(감리완료보고·현장조사 포함, 보완 없을 때)",
+       "level": 3,
+       "start": "2027-09-06",
+       "finish": "2027-09-22",
+       "trade": "준공",
+       "floor": "전체",
+       "duration": 10,
+       "calendar": "STD",
+       "late_start": "2027-09-06",
+       "late_finish": "2027-09-22",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "8.1.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "8.1.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "8.1.4",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "6.2.3",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.7.6",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "6.1.2",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "7.5.5",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.1.6",
+         "관계": "FS",
+         "시차": 0
+        },
+        {
+         "선행": "5.2.6",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      },
+      {
+       "code": "8.1.6",
+       "name": "준공 청소·준공검사·시설물 인수",
+       "level": 3,
+       "start": "2027-09-23",
+       "finish": "2027-10-15",
+       "trade": "준공",
+       "floor": "전체",
+       "duration": 15,
+       "calendar": "STD",
+       "late_start": "2027-09-23",
+       "late_finish": "2027-10-15",
+       "total_float": 0,
+       "critical": true,
+       "predecessors": [
+        {
+         "선행": "8.1.5",
+         "관계": "FS",
+         "시차": 0
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

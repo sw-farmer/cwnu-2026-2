@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>지상 15층 아파트 신축현장 진도 대시보드</title>
+<style>
+:root{--bg:#0b1020;--panel:#131a2e;--line:#243049;--txt:#e6ebf5;--mut:#8a97b4;--frame:#f59e0b;--fin:#22d3ee;--acc:#818cf8;--now:#f43f5e}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--txt);font-family:'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;font-size:13px}
+.app{height:100vh;display:grid;gap:10px;padding:10px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) minmax(0,1fr);grid-template-areas:"hdr hdr" "kpi kpi" "three gantt" "three curve"}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;position:relative;overflow:hidden;min-width:0;min-height:0}
+.ptitle{position:absolute;top:8px;left:12px;font-size:12px;color:var(--mut);z-index:2;pointer-events:none}
+#hdr{grid-area:hdr;display:flex;align-items:center;gap:16px;padding:8px 14px}
+#hdr h1{font-size:16px;margin:0;white-space:nowrap}
+#hdr h1 small{color:var(--mut);font-weight:400;margin-left:8px}
+.slider{flex:1;display:flex;align-items:center;gap:10px;min-width:180px}
+.slider input[type=range]{flex:1;accent-color:var(--acc)}
+#mlabel{min-width:150px;font-weight:700;text-align:right;white-space:nowrap}
+button{background:#1c2540;color:var(--txt);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer;font:inherit}
+button:hover{border-color:var(--acc)}
+#status{color:var(--mut);font-size:12px;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#status.err{color:var(--now);white-space:normal}
+#kpi{grid-area:kpi;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{padding:10px 14px}
+.card .lb{color:var(--mut);font-size:12px}
+.card .v{font-size:26px;font-weight:700;margin:2px 0}
+.card .v small{font-size:13px;font-weight:400;color:var(--mut);margin-left:4px}
+.card .sub{color:var(--mut);font-size:12px}
+.bar{height:5px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .25s}
+#three{grid-area:three}
+#gantt{grid-area:gantt}
+#curve{grid-area:curve}
+#c3d{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+#c3d:active{cursor:grabbing}
+#legend{position:absolute;left:12px;bottom:10px;font-size:12px;color:var(--mut);z-index:2;pointer-events:none;line-height:1.6}
+#legend b{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#floorinfo{position:absolute;right:12px;top:8px;font-size:12px;z-index:2;text-align:right;pointer-events:none}
+#msg3d{position:absolute;inset:0;display:none;align-items:center;justify-content:center;color:var(--mut);text-align:center;padding:20px}
+#gsvg{position:absolute;inset:0;width:100%;height:100%}
+#curve .wrap{position:absolute;inset:26px 8px 6px 8px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="panel" id="hdr">
+    <h1>지상 15층 아파트 신축현장<small>진도 대시보드</small></h1>
+    <div class="slider">
+      <button id="play" title="자동 재생">▶</button>
+      <input type="range" id="month" min="0" max="12" value="0" step="1">
+      <span id="mlabel"></span>
+    </div>
+    <button id="load">CSV 불러오기</button>
+    <button id="reset" title="data.js의 기본 데이터로 되돌리기">기본 데이터</button>
+    <span id="status"></span>
+    <input type="file" id="file" accept=".csv,text/csv" hidden>
+  </div>
+
+  <div id="kpi">
+    <div class="panel card"><div class="lb">공정률 (원가 가중)</div><div class="v" id="k1">-</div><div class="sub" id="k1s"></div><div class="bar"><i id="k1b"></i></div></div>
+    <div class="panel card"><div class="lb">누적원가</div><div class="v" id="k2">-</div><div class="sub" id="k2s"></div><div class="bar"><i id="k2b" style="background:var(--fin)"></i></div></div>
+    <div class="panel card"><div class="lb">투입인원 (해당 월)</div><div class="v" id="k3">-</div><div class="sub" id="k3s"></div><div class="bar"><i id="k3b" style="background:var(--frame)"></i></div></div>
+  </div>
+
+  <div class="panel" id="three">
+    <div class="ptitle">3D 매스 — 드래그: 회전 · 휠: 확대/축소</div>
+    <div id="floorinfo"></div>
+    <canvas id="c3d"></canvas>
+    <div id="msg3d">three.js를 불러오지 못했습니다.<br>인터넷 연결(CDN)을 확인하세요.</div>
+    <div id="legend"><b style="background:var(--frame)"></b>골조 시공 <b style="background:var(--fin);margin-left:10px"></b>마감 시공 <b style="background:#64748b;margin-left:10px"></b>기초 · 미착수(윤곽선)</div>
+  </div>
+
+  <div class="panel" id="gantt"><div class="ptitle">공정표 (간트) — 붉은 선: 현재 월말</div><svg id="gsvg"></svg></div>
+
+  <div class="panel" id="curve"><div class="ptitle">S커브 — 계획 누적원가 (백만원)</div><div class="wrap"><canvas id="cv"></canvas></div></div>
+</div>
+
+<script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const FRAME = '골조', FINISH = '마감';
+const PALETTE = ['#a78bfa','#34d399','#60a5fa','#f472b6','#fbbf24','#94a3b8','#fb7185','#2dd4bf'];
+const fmt = n => Math.round(n).toLocaleString('ko-KR');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+let D = null;        // {rows:[{name,f0,f1,s,e,crew,cost,floorTxt}], M, N, monthly}
+let cur = 0;
+
+/* ---------- 데이터: CSV 행 → 내부 구조, 월별 집계 (build_data.py와 동일 규칙) ---------- */
+function parseFloors(t){
+  const m = String(t).trim().match(/^(\d+)\s*[-~]\s*(\d+)$/);
+  if (m) return [+m[1], +m[2]];
+  const n = parseInt(t, 10);
+  return isNaN(n) ? [0, 0] : [n, n];
+}
+function normalize(raw){
+  return raw.map(r => {
+    const [f0, f1] = parseFloors(r['층']);
+    return {name: r['공종'], floorTxt: String(r['층']).replace('-', '~'), f0, f1,
+            s: +r['시작월'], e: +r['종료월'], crew: +r['인원'], cost: +r['원가_백만원']};
+  });
+}
+function aggregate(rows){
+  const M = Math.max(...rows.map(r => r.e));
+  const total = rows.reduce((a, r) => a + r.cost, 0);
+  const monthCost = Array(M + 1).fill(0), headcount = Array(M + 1).fill(0);
+  rows.forEach(r => { for (let m = r.s; m <= r.e; m++){ monthCost[m] += r.cost / (r.e - r.s + 1); headcount[m] += r.crew; } });
+  let acc = 0;
+  const cumCost = monthCost.map(v => acc += v);
+  return {months: M, totalCost: total, monthCost, cumCost, headcount, progress: cumCost.map(v => v / total * 100)};
+}
+function setData(rows, monthly, label){
+  const M = monthly.months;
+  const N = Math.max(1, ...rows.filter(r => r.name === FRAME || r.name === FINISH).map(r => r.f1));
+  D = {rows, M, N, monthly};
+  const sl = $('month'); sl.max = M; cur = Math.min(cur, M); sl.value = cur;
+  buildBuilding(); buildChart(); setStatus(label);
+  update();
+}
+function loadDefault(){
+  const d = window.SCHEDULE_DATA;
+  if (!d) return setStatus('data.js를 찾을 수 없습니다. build_data.py를 실행하세요.', true);
+  setData(normalize(d.rows), d.monthly, `${d.source} · ${d.rows.length}행 (data.js)`);
+}
+
+/* ---------- CSV 불러오기 ---------- */
+function parseCSV(text){
+  text = text.replace(/^﻿/, '');
+  const out = []; let row = [], f = '', q = false;
+  for (let i = 0; i < text.length; i++){
+    const c = text[i];
+    if (q){ if (c === '"'){ if (text[i+1] === '"'){ f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ','){ row.push(f); f = ''; }
+    else if (c === '\n' || c === '\r'){ if (c === '\r' && text[i+1] === '\n') i++; row.push(f); f = ''; out.push(row); row = []; }
+    else f += c;
+  }
+  if (f !== '' || row.length){ row.push(f); out.push(row); }
+  return out.filter(r => r.some(x => x.trim() !== ''));
+}
+function decode(buf){
+  try { return new TextDecoder('utf-8', {fatal: true}).decode(buf); }
+  catch (e) { return new TextDecoder('euc-kr').decode(buf); }   // 엑셀 CP949 저장본
+}
+function csvToRows(text){
+  const t = parseCSV(text);
+  if (t.length < 2) throw new Error('데이터 행이 없습니다.');
+  const head = t[0].map(h => h.trim());
+  const need = ['공종','층','시작월','종료월','인원','원가_백만원'];
+  const idx = {};
+  for (const k of need){ idx[k] = head.indexOf(k); if (idx[k] < 0) throw new Error(`열이 없습니다: ${k}`); }
+  return t.slice(1).map((r, i) => {
+    const g = k => (r[idx[k]] || '').trim();
+    const o = {'공종': g('공종'), '층': g('층'), '시작월': parseInt(g('시작월'), 10), '종료월': parseInt(g('종료월'), 10),
+               '인원': parseFloat(g('인원')), '원가_백만원': parseFloat(g('원가_백만원').replace(/,/g, ''))};
+    const ln = i + 2;
+    if (!o['공종']) throw new Error(`${ln}행: 공종이 비어 있습니다.`);
+    if (!/^\d+\s*([-~]\s*\d+)?$/.test(o['층'])) throw new Error(`${ln}행: 층 형식 오류 ('3' 또는 '1~5')`);
+    if (![o['시작월'], o['종료월'], o['인원'], o['원가_백만원']].every(Number.isFinite)) throw new Error(`${ln}행: 숫자 형식 오류`);
+    if (o['시작월'] < 1 || o['종료월'] < o['시작월']) throw new Error(`${ln}행: 월 범위 오류 (${o['시작월']}~${o['종료월']})`);
+    return o;
+  });
+}
+function setStatus(t, err){ const s = $('status'); s.textContent = t; s.title = t; s.className = err ? 'err' : ''; }
+$('load').onclick = () => $('file').click();
+$('reset').onclick = loadDefault;
+$('file').onchange = async ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  try {
+    const rows = normalize(csvToRows(decode(await f.arrayBuffer())));
+    setData(rows, aggregate(rows), `${f.name} · ${rows.length}행 (불러옴)`);
+  } catch (e) { setStatus('CSV 오류: ' + e.message, true); }
+  ev.target.value = '';
+};
+
+/* ---------- 진행률 ---------- */
+const pct = (r, m) => Math.max(0, Math.min(1, (m - r.s + 1) / (r.e - r.s + 1)));
+function floorPct(kind, n, m){
+  let v = 0;
+  D.rows.forEach(r => { if (r.name === kind && n >= r.f0 && n <= r.f1) v = Math.max(v, pct(r, m)); });
+  return v;
+}
+function basePct(m){
+  let v = 0;
+  D.rows.forEach(r => { if (r.f1 === 0 && r.name.includes('기초')) v = Math.max(v, pct(r, m)); });
+  return v;
+}
+
+/* ---------- 3D (three.js) ---------- */
+let T = null;
+const FW = 26, FD = 14, FH = 3;
+const view = {theta: 0.85, phi: 1.05, r: 78};
+function initThree(){
+  if (typeof THREE === 'undefined'){ $('msg3d').style.display = 'flex'; return; }
+  const canvas = $('c3d');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x101830);
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.5, 600);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.8); sun.position.set(40, 90, 30); scene.add(sun);
+  const grid = new THREE.GridHelper(120, 24, 0x2a3656, 0x1c2540); scene.add(grid);
+  const group = new THREE.Group(); scene.add(group);
+  T = {renderer, scene, camera, group, floors: [], base: null, target: new THREE.Vector3()};
+
+  let drag = null;
+  canvas.addEventListener('pointerdown', e => { drag = {x: e.clientX, y: e.clientY}; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointerup', () => drag = null);
+  canvas.addEventListener('pointermove', e => {
+    if (!drag) return;
+    view.theta -= (e.clientX - drag.x) * 0.008;
+    view.phi = Math.max(0.15, Math.min(1.5, view.phi - (e.clientY - drag.y) * 0.006));
+    drag = {x: e.clientX, y: e.clientY};
+  });
+  canvas.addEventListener('wheel', e => { e.preventDefault(); view.r = Math.max(35, Math.min(170, view.r * (1 + Math.sign(e.deltaY) * 0.08))); }, {passive: false});
+  new ResizeObserver(() => {
+    const p = $('three'); renderer.setSize(p.clientWidth, p.clientHeight, false);
+    camera.aspect = p.clientWidth / Math.max(1, p.clientHeight); camera.updateProjectionMatrix();
+  }).observe($('three'));
+  (function loop(){
+    const t = T.target;
+    camera.position.set(t.x + view.r * Math.sin(view.phi) * Math.sin(view.theta), t.y + view.r * Math.cos(view.phi), t.z + view.r * Math.sin(view.phi) * Math.cos(view.theta));
+    camera.lookAt(t);
+    renderer.render(scene, camera);
+    requestAnimationFrame(loop);
+  })();
+}
+function buildBuilding(){
+  if (!T) return;
+  const g = T.group;
+  while (g.children.length){ const o = g.children.pop(); o.geometry && o.geometry.dispose(); }
+  const mat = (c, o) => new THREE.MeshLambertMaterial({color: c, transparent: true, opacity: o});
+  T.base = new THREE.Mesh(new THREE.BoxGeometry(FW + 10, 1, FD + 8), mat(0x64748b, 1));
+  T.base.position.y = 0.5; g.add(T.base);
+  const ghostGeo = new THREE.EdgesGeometry(new THREE.BoxGeometry(FW, FH, FD));
+  const ghostMat = new THREE.LineBasicMaterial({color: 0x3b4a70, transparent: true, opacity: 0.6});
+  T.floors = [];
+  for (let n = 1; n <= D.N; n++){
+    const y = 1 + (n - 1) * FH + FH / 2;
+    const ghost = new THREE.LineSegments(ghostGeo, ghostMat); ghost.position.y = y; g.add(ghost);
+    const frame = new THREE.Mesh(new THREE.BoxGeometry(FW, FH * 0.92, FD), mat(0xf59e0b, 1)); frame.position.y = y; g.add(frame);
+    const fin = new THREE.Mesh(new THREE.BoxGeometry(FW + 0.6, FH * 0.96, FD + 0.6), mat(0x22d3ee, 1)); fin.position.y = y; g.add(fin);
+    T.floors.push({frame, fin});
+  }
+  T.target.set(0, (1 + D.N * FH) * 0.4, 0);
+  view.r = Math.max(70, D.N * 6.4);
+}
+function update3D(){
+  if (!T) return;
+  const bp = basePct(cur);
+  T.base.material.opacity = 0.25 + 0.75 * bp;
+  let fd = 0, gd = 0;
+  T.floors.forEach((f, i) => {
+    const fp = floorPct(FRAME, i + 1, cur), gp = floorPct(FINISH, i + 1, cur);
+    f.frame.visible = fp > 0; f.frame.material.opacity = 0.3 + 0.7 * fp;
+    f.fin.visible = gp > 0;   f.fin.material.opacity = 0.35 + 0.65 * gp;
+    if (fp >= 1) fd++; if (gp >= 1) gd++;
+  });
+  $('floorinfo').innerHTML = `<span style="color:var(--frame)">골조 ${fd}/${D.N}층 완료</span><br><span style="color:var(--fin)">마감 ${gd}/${D.N}층 완료</span>`;
+  return {fd, gd};
+}
+
+/* ---------- 간트 (SVG) ---------- */
+function colorOf(name, groups){
+  if (name === FRAME) return '#f59e0b';
+  if (name === FINISH) return '#22d3ee';
+  const others = groups.filter(g => g !== FRAME && g !== FINISH);
+  return PALETTE[others.indexOf(name) % PALETTE.length];
+}
+function renderGantt(){
+  const box = $('gantt'), W = box.clientWidth, H = box.clientHeight;
+  if (!D || W < 50) return;
+  const groups = [...new Set(D.rows.map(r => r.name))];
+  const pl = 84, pr = 14, pt = 44, pb = 8, M = D.M;
+  const rh = (H - pt - pb) / groups.length, bh = Math.min(22, rh * 0.62);
+  const x = m => pl + m / M * (W - pl - pr);
+  let s = '';
+  for (let m = 1; m <= M; m++){
+    s += `<line x1="${x(m-1)}" x2="${x(m-1)}" y1="${pt-4}" y2="${H-pb}" stroke="#243049" stroke-width="1"/>`;
+    s += `<text x="${(x(m-1)+x(m))/2}" y="${pt-9}" fill="#8a97b4" font-size="10" text-anchor="middle">${m}월</text>`;
+  }
+  s += `<line x1="${x(M)}" x2="${x(M)}" y1="${pt-4}" y2="${H-pb}" stroke="#243049"/>`;
+  groups.forEach((g, i) => {
+    const cy = pt + rh * i + rh / 2, c = colorOf(g, groups);
+    s += `<text x="${pl-8}" y="${cy+4}" fill="#cbd5e1" font-size="11.5" text-anchor="end">${esc(g)}</text>`;
+    D.rows.filter(r => r.name === g).forEach(r => {
+      const tip = `<title>${esc(g)} ${esc(r.floorTxt)}층 · ${r.s}~${r.e}월 · ${r.crew}명 · ${fmt(r.cost)}백만원</title>`;
+      s += `<rect x="${x(r.s-1)}" y="${cy-bh/2}" width="${x(r.e)-x(r.s-1)}" height="${bh}" rx="3" fill="${c}" opacity="0.22">${tip}</rect>`;
+      if (cur >= r.s){
+        const xe = x(Math.min(r.e, cur));
+        s += `<rect x="${x(r.s-1)}" y="${cy-bh/2}" width="${xe-x(r.s-1)}" height="${bh}" rx="3" fill="${c}" opacity="0.6">${tip}</rect>`;
+      }
+    });
+  });
+  s += `<line x1="${x(cur)}" x2="${x(cur)}" y1="${pt-4}" y2="${H-pb}" stroke="#f43f5e" stroke-width="2"/>`;
+  s += `<polygon points="${x(cur)-5},${pt-6} ${x(cur)+5},${pt-6} ${x(cur)},${pt}" fill="#f43f5e"/>`;
+  const svg = $('gsvg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.innerHTML = s;
+}
+
+/* ---------- S커브 (Chart.js) ---------- */
+let chart = null;
+const nowLine = {id: 'nowLine', afterDatasetsDraw(ch){
+  const sc = ch.scales.x, a = ch.chartArea, px = sc.getPixelForValue(cur), c = ch.ctx;
+  c.save(); c.strokeStyle = '#f43f5e'; c.lineWidth = 1.5; c.setLineDash([4, 3]);
+  c.beginPath(); c.moveTo(px, a.top); c.lineTo(px, a.bottom); c.stroke(); c.restore();
+}};
+function buildChart(){
+  if (typeof Chart === 'undefined'){ $('curve').querySelector('.wrap').innerHTML = '<div style="color:var(--mut);padding:30px">Chart.js를 불러오지 못했습니다. 인터넷(CDN) 연결을 확인하세요.</div>'; return; }
+  if (chart) chart.destroy();
+  Chart.defaults.color = '#8a97b4'; Chart.defaults.borderColor = '#243049';
+  const labels = D.monthly.cumCost.map((_, m) => m === 0 ? '착공' : m + '월');
+  chart = new Chart($('cv'), {
+    type: 'line',
+    data: {labels, datasets: [
+      {label: '계획 누적원가', data: D.monthly.cumCost, borderColor: '#818cf8', backgroundColor: 'rgba(129,140,248,.16)', fill: true, tension: 0.3, pointRadius: 2},
+      {label: '현재 시점', data: [], borderColor: '#f43f5e', backgroundColor: '#f43f5e', showLine: false, pointRadius: 7, pointHoverRadius: 8}
+    ]},
+    options: {responsive: true, maintainAspectRatio: false, animation: false,
+      plugins: {legend: {position: 'bottom', labels: {boxWidth: 12}}, tooltip: {callbacks: {label: c => `${c.dataset.label}: ${fmt(c.parsed.y)} 백만원`}}},
+      scales: {y: {beginAtZero: true, ticks: {callback: v => fmt(v)}}}},
+    plugins: [nowLine]
+  });
+}
+function updateChart(){
+  if (!chart) return;
+  chart.data.datasets[1].data = D.monthly.cumCost.map((v, m) => m === cur ? v : null);
+  chart.update('none');
+}
+
+/* ---------- 갱신 ---------- */
+function update(){
+  if (!D) return;
+  const mo = D.monthly, tot = mo.totalCost;
+  $('month').value = cur;
+  $('mlabel').textContent = cur === 0 ? `착공 전 (0 / ${D.M}개월)` : `${cur}개월차 / 공기 ${D.M}개월`;
+  const p = mo.progress[cur], peak = Math.max(...mo.headcount);
+  $('k1').innerHTML = p.toFixed(1) + '<small>%</small>';
+  $('k1s').textContent = `당월 공정 +${(cur ? p - mo.progress[cur-1] : 0).toFixed(1)}%p`;
+  $('k1b').style.width = p + '%';
+  $('k2').innerHTML = fmt(mo.cumCost[cur]) + '<small>백만원</small>';
+  $('k2s').textContent = `총 ${fmt(tot)} 중 · 당월 ${fmt(mo.monthCost[cur])}`;
+  $('k2b').style.width = mo.cumCost[cur] / tot * 100 + '%';
+  $('k3').innerHTML = fmt(mo.headcount[cur]) + '<small>명</small>';
+  $('k3s').textContent = `최대 ${fmt(peak)}명 (${mo.headcount.indexOf(peak)}월)`;
+  $('k3b').style.width = mo.headcount[cur] / peak * 100 + '%';
+  update3D(); renderGantt(); updateChart();
+}
+
+/* ---------- 이벤트 ---------- */
+$('month').oninput = e => { cur = +e.target.value; update(); };
+let timer = null;
+$('play').onclick = () => {
+  if (timer){ clearInterval(timer); timer = null; $('play').textContent = '▶'; return; }
+  $('play').textContent = '⏸';
+  if (cur >= D.M) cur = 0;
+  timer = setInterval(() => {
+    if (cur >= D.M){ $('play').onclick(); return; }
+    cur++; update();
+  }, 800);
+};
+new ResizeObserver(renderGantt).observe($('gantt'));
+initThree();
+cur = +((location.hash.match(/m=(\d+)/) || [])[1] || 0);   // 예: dashboard.html#m=8
+loadDefault();
+</script>
+</body>
+</html>
